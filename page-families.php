@@ -33,7 +33,7 @@ get_header(); ?>
 				$img = get_field("feat_image");
 				$title = get_the_title(); 
 				$link = get_permalink();
-				$text = ( get_the_content() ) ? shortenText( get_the_content(),300,' ','...' ):'';
+				$text = ( get_the_content() ) ? shortenText( get_the_content(),125,' ','...' ):'';
 				?>
 				<div class="flexcol">
 					<div class="wrap">
@@ -71,7 +71,6 @@ get_header(); ?>
 					$img = $c['image'];
 					$title = $c['title'];
 					$description = $c['description'];
-					$button_name = $c['button_name'];
 					$button_name = $c['button_name'];
 					$type = $c['button_link'];
 					$button_type = ($type=='file') ? $type : 'url';
