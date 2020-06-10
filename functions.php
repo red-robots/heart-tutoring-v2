@@ -388,3 +388,77 @@ function my_acf_api_key() {
    acf_update_setting('google_api_key', 'AIzaSyBOA-RHy6JvtZYx7etKtQL0-DU7tnrK36Y');
 } 
 add_action('acf/init', 'my_acf_api_key');
+
+
+/* Social Media */
+function get_social_media() {
+  $social['facebook'] = "facebook_link";
+  $social['twitter'] = "twitter_link";
+  $social['linkedin'] = "linkedin_link";
+  $social['instagram'] = "instagram_link";
+  $social_links = array();
+  foreach($social as $k=>$fieldname) {
+    $val = get_field($fieldname,"option");
+    if($val) {
+      $social_links[$k] = $val;
+    }
+  }
+  return $social_links;
+}
+
+
+function social_media_shortcode( $atts ) {
+  $a = shortcode_atts( array(
+    'hide' => '',
+  ), $atts );
+
+  $hide_items = ($a['hide']) ? explode(",",$a['hide']) : '';
+  $output = '';
+  if( $social = get_social_media() ) {
+    if($hide_items) {
+      foreach($social as $type=>$link) {
+        if( in_array($type,$hide_items) ) {
+          unset($social[$type]);
+        }
+      }
+    }
+
+    if($social) {
+      $icon_path = THEMEURI . 'images/icons/';
+      foreach($social as $type=>$link) {
+        $output .= '<a href="'.$link.'" target="_blank" class="'.$type.'"><i style="background-image:url('.$icon_path.'icon-'.$type.'.png)"></i><span class="hidden">'.$type.'</span></a>';
+      }
+    }
+  }
+
+  return ($output)  ? '<div class="social-media-links">'.$output.'</div>':'';
+}
+add_shortcode( 'social_media', 'social_media_shortcode' );
+
+
+function extract_emails_from($string){
+  preg_match_all("/[\._a-zA-Z0-9-]+@[\._a-zA-Z0-9-]+/i", $string, $matches);
+  return $matches[0];
+}
+
+function email_obfuscator($string) {
+    $output = '';
+    if($string) {
+        $emails_matched = ($string) ? extract_emails_from($string) : '';
+        if($emails_matched) {
+            foreach($emails_matched as $em) {
+                $encrypted = antispambot($em,1);
+                $replace = 'mailto:'.$em;
+                $new_mailto = 'mailto:'.$encrypted;
+                $string = str_replace($replace, $new_mailto, $string);
+                $rep2 = $em.'</a>';
+                $new2 = antispambot($em).'</a>';
+                $string = str_replace($rep2, $new2, $string);
+            }
+        }
+        $output = apply_filters('the_content',$string);
+    }
+    return $output;
+}
+
+

@@ -1420,9 +1420,13 @@ a.theme-btn,.theme-btn{cursor:pointer;text-decoration:none;display:inline-block;
 a.theme-btn:hover,.theme-btn:hover{background:#4dc0df;box-shadow:0 0 8px 3px rgba(0,0,0,0.2)}
 a.theme-btn2,.theme-btn2{cursor:pointer;text-decoration:none;display:inline-block;position:relative;border-radius:5px;padding:7px 20px 6px;color:#FFF;font-size:15px;line-height:1.2;background:#8a5eb1}
 a.theme-btn2:hover,.theme-btn2:hover{background:#a786c5}
+.social-media-links a{display:inline-block;width:30px;height:30px;border-radius:3px;overflow:hidden;margin:5px 8px}
+.social-media-links a i{display:block;width:100%;height:100%;background-size:contain;background-position:top center;background-repeat:no-repeat}
+.social-media-links a:hover{box-shadow:0 0 5px 1px rgba(0,0,0,0.35)}
 .new-content-area,.new-content-area *{box-sizing:border-box}
 .new-content-area{width:100%;float:left;padding-top:30px;padding-bottom:30px;background-image:url("images/bg-butterfly.png");background-repeat:no-repeat;background-position:right top}
 .new-content-area .main-info-text{margin-bottom:20px}
+.new-content-area.concepts{padding-bottom:0}
 .contentWrap{max-width:1130px;width:100%;padding-left:30px;padding-right:30px;margin:0 auto}
 .concepts-posts .flexwrap{position:relative;margin-left:-15px;margin-right:-15px;display:-webkit-box;display:-ms-flexbox;display:-webkit-flex;display:flex;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-flex-direction:row;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row}
 .concepts-posts .flexcol{width:100%;padding:15px}
@@ -1477,3 +1481,13 @@ a.theme-btn2:hover,.theme-btn2:hover{background:#a786c5}
 .concept-section-other .text{font-size:14px;line-height:1.3}
 .concept-section-other div.button{margin-top:10px}
 .concept-section-other div.button a.theme-btn2{padding:6px 20px}
+.concept-bottom-section{width:100%;float:left;background:#00a5d1;padding-top:40px;padding-bottom:40px}
+.concept-bottom-section .stitle{margin:0 0 10px;font-size:1.5em;line-height:1.3;color:#FFF;text-align:center}
+.concept-bottom-section .flexwrap{margin-left:-15px;margin-right:-15px;display:-webkit-box;display:-ms-flexbox;display:-webkit-flex;display:flex;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-flex-direction:row;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row}
+.concept-bottom-section .bcol{width:100%;padding:15px;text-align:center}
+@media(min-width:480px){.concept-bottom-section .bcol{width:50%}
+}@media(min-width:900px){.concept-bottom-section .bcol{width:25%}
+}.concept-bottom-section .bcol .wrap{height:100%;padding:30px 15px 20px;background:#FFF;border-radius:8px;border-top-left-radius:0}
+.concept-bottom-section .bcol .title{color:#00a5d1;margin:0;font-size:1.1em;line-height:1.2}
+.concept-bottom-section .bcol .text,.concept-bottom-section .bcol p{font-size:13px;line-height:1.4}
+.concept-bottom-section .social-media-links{margin-top:10px;margin-bottom:15px}
