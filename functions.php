@@ -1,7 +1,8 @@
 <?php 
 // Enqueueing all the java script in a no conflict mode
 function bellaworks_scripts() {
-  wp_enqueue_style( 'bellaworks-style', get_stylesheet_uri() );
+  //wp_enqueue_style( 'bellaworks-style', get_template_directory_uri() . '/style.css', array(), '2.0' );
+  wp_enqueue_style( 'bellaworks-style', get_stylesheet_uri()  );
 
   wp_deregister_script('jquery');
   wp_register_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js', false, '3.4.1', false);
@@ -394,7 +395,7 @@ add_action('acf/init', 'my_acf_api_key');
 function get_social_media() {
   $social['facebook'] = array("facebook_link","fa fa-facebook-f");
   $social['twitter'] = array("twitter_link","fa fa-twitter");
-  $social['linkedin'] = array("linkedin_link","fa fa-linkedin-in");
+  $social['linkedin'] = array("linkedin_link","fa fa-linkedin");
   $social['instagram'] = array("instagram_link","fa fa-instagram");
   $social_links = array();
   foreach($social as $k=>$data) {
