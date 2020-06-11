@@ -1,3 +1,4 @@
+@import url("https://use.fontawesome.com/releases/v5.3.0/css/all.css");
 a,input,button {
 	transition: all ease .3s;
 }
@@ -57,7 +58,8 @@ a.theme-btn2,
 	}
 }
 
-
+.noPadBottom {padding-bottom:0!important;}
+.noPadTop {padding-top:0!important;}
 .new-content-area,
 .new-content-area * {
 	box-sizing: border-box;
@@ -421,6 +423,41 @@ a.theme-btn2,
 	.social-media-links {
 		margin-top: 10px;
 		margin-bottom: 15px;
+	}
+}
+
+#main-header .head-social-links,
+#footer .sociallinks {
+	a.social {
+		display: inline-block;
+		width: 30px;
+		height: 30px;
+		position: relative;
+		overflow: hidden;
+		background: #525252;
+		color: #FFF;
+		text-align: center;
+		font-size: 20px;
+		line-height: 32px;
+		transition: all ease .3s;
+		margin-right: 4px;
+		i {
+			position: relative;
+		}
+		&:hover {
+			background: #b3b2b2;
+		}
+	}
+}
+
+#main-header .head-social-links {
+	a.social {
+		background: #8a8a8a;
+		margin-right: 0;
+		margin-left: 4px;
+		&:hover {
+			background: #b3b2b2;
+		}
 	}
 }
 

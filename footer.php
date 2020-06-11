@@ -31,15 +31,15 @@ if( !empty($image) ) { ?>
 
 <div id="footer2-column1">Heart Math Tutoring | <a href='ma&#105;&#108;&#116;o&#58;volunt&#101;e%72%40h%6&#53;ar&#37;&#55;4tu&#116;o&#114;in&#103;%2E&#111;%7&#50;g'>&#118;olunt&#101;e&#114;&#64;&#104;&#101;a&#114;t&#116;&#117;t&#111;ring&#46;org</a>
 
-	<div class="clear"></div>
+<div class="clear"></div>
+
 <div class="sociallinks">
-	<a href="<?php the_field('facebook_link', 'option'); ?>" target="_blank"><img src="<?php bloginfo('template_url'); ?>/images/icon-footer-facebook.png" alt="" border="0"></a>
-	<a href="<?php the_field('twitter_link', 'option'); ?>" target="_blank"><img src="<?php bloginfo('template_url'); ?>/images/icon-footer-twitter.png" alt="" border="0"></a>
-	<a href="<?php the_field('linkedin_link', 'option'); ?>" target="_blank"><img src="<?php bloginfo('template_url'); ?>/images/icon-footer-linkedin.png" alt="" border="0"></a>
-	<a href="<?php the_field('instagram_link', 'option'); ?>" target="_blank"><img src="<?php bloginfo('template_url'); ?>/images/icon-footer-instagram.png" alt="" border="0"></a>
+<?php if( $social = get_social_media() ) { ?>
+	<?php foreach ($social as $type=>$data) { ?>
+	<a href="<?php echo $data[0] ?>" target="_blank" class="social <?php echo $type ?>"><i class="<?php echo $data[1] ?>"></i><span style="position:absolute;z-index:-999"><?php echo ucwords($type) ?></span></a>	
+	<?php } ?>
+<?php } ?>
 </div>
-
-
 
 <br>
 <a href="<?php bloginfo('url'); ?>/contact-us">CONTACT US</a> &nbsp; | &nbsp;

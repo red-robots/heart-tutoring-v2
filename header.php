@@ -110,10 +110,13 @@ $(window).scroll(function() {
                 <div id="header-content">
                 Connecting Students & Volunteers for Results that Count
                     <div id="header-content1">
-                        <a href="<?php the_field('facebook_link', 'option'); ?>" target="_blank"><img src="<?php bloginfo('template_url'); ?>/images/icon-facebook.png" alt="" border="0"></a>
-                        <a href="<?php the_field('twitter_link', 'option'); ?>" target="_blank"><img src="<?php bloginfo('template_url'); ?>/images/icon-twitter.png" alt="" border="0"></a>
-                        <a href="<?php the_field('linkedin_link', 'option'); ?>" target="_blank"><img src="<?php bloginfo('template_url'); ?>/images/icon-linkedin.png" alt="" border="0"></a>
-                        <a href="<?php the_field('instagram_link', 'option'); ?>" target="_blank"><img src="<?php bloginfo('template_url'); ?>/images/icon-instagram.png" alt="" border="0"></a>
+                        <?php if( $social = get_social_media() ) { ?>
+                        <div class="head-social-links">
+                            <?php foreach ($social as $type=>$data) { ?>
+                            <a href="<?php echo $data[0] ?>" target="_blank" class="social <?php echo $type ?>"><i class="<?php echo $data[1] ?>"></i><span style="position:absolute;z-index:-999"><?php echo ucwords($type) ?></span></a>  
+                            <?php } ?>
+                        </div>
+                        <?php } ?>
                     </div><!-- header-content1 -->
                 </div><!-- header-content -->
             </div><!-- header-content-wrapper -->

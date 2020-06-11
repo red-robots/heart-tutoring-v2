@@ -4,7 +4,7 @@
  */
 get_header(); ?>
 
-<div id="primary" class="new-content-area">
+<div id="primary" class="new-content-area noPadBottom">
 	<main class="new-site-main contentWrap" role="main">
 	
 	<?php while ( have_posts() ) : the_post(); ?>
@@ -113,6 +113,8 @@ get_header(); ?>
 		</section>
 		<?php } ?>
 	</main>
+
+	<?php get_template_part("inc/bottom-concept"); ?>
 </div>
 
 <?php get_footer(); ?>

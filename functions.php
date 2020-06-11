@@ -392,15 +392,17 @@ add_action('acf/init', 'my_acf_api_key');
 
 /* Social Media */
 function get_social_media() {
-  $social['facebook'] = "facebook_link";
-  $social['twitter'] = "twitter_link";
-  $social['linkedin'] = "linkedin_link";
-  $social['instagram'] = "instagram_link";
+  $social['facebook'] = array("facebook_link","fa fa-facebook-f");
+  $social['twitter'] = array("twitter_link","fa fa-twitter");
+  $social['linkedin'] = array("linkedin_link","fa fa-linkedin-in");
+  $social['instagram'] = array("instagram_link","fa fa-instagram");
   $social_links = array();
-  foreach($social as $k=>$fieldname) {
+  foreach($social as $k=>$data) {
+    $fieldname = $data[0];
+    $icon = $data[1];
     $val = get_field($fieldname,"option");
     if($val) {
-      $social_links[$k] = $val;
+      $social_links[$k] = array($val,$icon);
     }
   }
   return $social_links;
@@ -416,7 +418,7 @@ function social_media_shortcode( $atts ) {
   $output = '';
   if( $social = get_social_media() ) {
     if($hide_items) {
-      foreach($social as $type=>$link) {
+      foreach($social as $type=>$data) {
         if( in_array($type,$hide_items) ) {
           unset($social[$type]);
         }
@@ -425,7 +427,8 @@ function social_media_shortcode( $atts ) {
 
     if($social) {
       $icon_path = THEMEURI . 'images/icons/';
-      foreach($social as $type=>$link) {
+      foreach($social as $type=>$data) {
+        $link = $data[0];
         $output .= '<a href="'.$link.'" target="_blank" class="'.$type.'"><i style="background-image:url('.$icon_path.'icon-'.$type.'.png)"></i><span class="hidden">'.$type.'</span></a>';
       }
     }
