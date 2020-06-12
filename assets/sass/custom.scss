@@ -170,12 +170,19 @@ a.theme-btn2,
 		position: relative;
 		border: 1px solid $primary;
 		margin-bottom: 10px;
+		a {
+			display: block;
+			width: 100%;
+			float: left;
+			text-decoration: none;
+		}
 		img {
 			width: 100%;
 			height: auto;
 			float: left;
 		}
-		div.thumb {
+		.thumb {
+			display: block;
 			width: 100%;
 			height: 100%;
 			position: absolute;
@@ -249,7 +256,8 @@ a.theme-btn2,
 			height: auto;
 			float: left;
 		}
-		div.thumb {
+		.thumb {
+			display: block;
 			width: 100%;
 			height: 100%;
 			position: absolute;
@@ -318,6 +326,12 @@ a.theme-btn2,
 		@include tab {
 			width: 25%;
 		}
+		a {
+			display: block;
+			width: 100%;
+			float: left;
+			text-decoration: none;
+		}
 	}
 	.section-title {
 		h2 {
@@ -338,7 +352,7 @@ a.theme-btn2,
 			height: auto;
 			float: left;
 		}
-		div.thumb {
+		.thumb {
 			width: 100%;
 			height: 100%;
 			position: absolute;
@@ -423,6 +437,9 @@ a.theme-btn2,
 		margin-top: 10px;
 		margin-bottom: 15px;
 	}
+}
+body.single-concepts .concept-bottom-section {
+	margin-top: 30px;
 }
 
 #main-header .head-social-links,

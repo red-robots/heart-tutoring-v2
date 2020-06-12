@@ -75,7 +75,7 @@ get_header(); ?>
 					$type = $c['button_link'];
 					$button_type = ($type=='file') ? $type : 'url';
 					$buttonLink = $c[$button_type];
-					$buttonTarget = '';
+					$buttonTarget = '_self';
 					if($button_type=='file') {
 						$buttonTarget = "_blank";
 					} else {
@@ -84,14 +84,22 @@ get_header(); ?>
 							$buttonTarget = $bLink['target'];
 						}
 					}
+					$link_open = '';
+					$link_close = '';
+					if ($button_name && $buttonLink) {
+						$link_open = '<a href="'.$buttonLink.'" target="'.$buttonTarget.'">';
+						$link_close = '</a>';
+					}
 				?>
 				<div class="rscol">
 					<div class="wrap">
 						<div class="image <?php echo ($img) ? 'hasImage':'noImage' ?>">
+							<?php echo $link_open; ?>
 							<img src="<?php echo $placeholder ?>" alt="" aria-hidden="true">
 							<?php if ($img) { ?>
-							<div class="thumb" style="background-image:url('<?php echo $img['url'] ?>')"></div>	
+							<span class="thumb" style="background-image:url('<?php echo $img['url'] ?>')"></span>	
 							<?php } ?>
+							<?php echo $link_close; ?>
 						</div>
 						<div class="details">
 							<?php if ($title) { ?>
