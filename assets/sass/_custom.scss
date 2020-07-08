@@ -851,8 +851,9 @@ h2.faqTitle {
 			background: #FFF;
 			width: 100%;
 			float: left;
-			position: relative;
-			top: 2px;
+			position: absolute;
+			top: 43px;
+			padding: 6px 0;
 		}
 	}
 	#main-header-wrapper {
@@ -908,6 +909,12 @@ h2.faqTitle {
 	}
 	#custom-accordion {
 		width: 100%;
+		.faqrow {
+			padding-right: 0;
+			.question {
+				padding-right: 130px;
+			}
+		}
 	}
 	#featured-image {
 		width: 100%;
@@ -921,3 +928,5 @@ h2.faqTitle {
 		padding-right: 30px;
 	}
 }
+
+
