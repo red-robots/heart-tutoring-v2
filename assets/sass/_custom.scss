@@ -555,6 +555,7 @@ h2.faqTitle {
 	background-color: #79797B;
 	background-repeat: repeat;
 	background-position: center;
+	padding-bottom: 20px;
 	#footer2-wrapper {
 		max-width: 1113px;
 		width: 100%;
@@ -625,8 +626,8 @@ h2.faqTitle {
 		box-sizing: border-box;
 	}
 	body {
-			overflow-x: hidden;
-			overflow-y: auto;
+		overflow-x: hidden;
+		overflow-y: auto;
 		
 		#main-header-wrapper {
 			height: 183px;
@@ -754,14 +755,14 @@ h2.faqTitle {
 			padding-bottom: 100px;
 		}
 		#home-row3 {
-			height: auto;
+			height: auto!important;
 			#instagram-wrapper {
 				width: 65%;
 				float: left;
 				height: auto;
 				#instagram-feed {
 					width: 100%;
-					height: auto;
+					height: auto!important;
 				}
 			}
 			#latest-news-feed {
@@ -784,19 +785,7 @@ h2.faqTitle {
 			padding-left: 30px;
 			padding-right: 30px;
 		}
-		// #footer {
-		// 	max-width: 100%;
-		// 	width: 100%;
-		// 	height: auto;
-		// 	background-size: cover;
-		// 	background-color: #79797B;
-		// 	#footer2-wrapper {
-		// 		max-width: 1200px;
-		// 		width: 100%;
-		// 		margin: 0 auto;
-		// 		padding: 10px 30px;
-		// 	}
-		// }
+
 		.flexslider .slides > li {
 			line-height: 1.2;
 		}
@@ -813,11 +802,13 @@ h2.faqTitle {
 			top: 0!important;
 			left: 0!important;
 			width: 100%!important;
+			float: left!important;
 			z-index: 500!important;
 			padding: 0 0!important;
 			background-color: #00A5D1!important;
 			border-top: none!important;
 			border-bottom: none!important;
+			height: auto!important;
 			#mobileMenuTxt {
 				display: block;
 				color: #FFF;
@@ -865,7 +856,7 @@ h2.faqTitle {
 			position: relative;
 			#logo {
 				top: 20px;
-				left: 0;
+				left: 20px;
 				a {
 					display: inline-block;
 					width: 250px;
@@ -930,6 +921,19 @@ h2.faqTitle {
 			width: 100%;
 			padding-left: 30px;
 			padding-right: 30px;
+		}
+	}
+}
+
+@media screen and (max-width:820px) {
+	html body {
+		#main-header-wrapper #logo {
+			left: 0!important;
+		}
+		#main-header-wrapper #header-content-wrapper #header-content {
+			text-align: center!important;
+			padding-left: 0!important;
+			padding-right: 0!important;
 		}
 	}
 }

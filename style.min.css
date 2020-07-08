@@ -2045,7 +2045,7 @@ h2.faqTitle{font-size:21px;margin-bottom:20px}
 #custom-accordion .faqrow.active .question span.view:after{content:"close"}
 #custom-accordion .faqrow.active .question span.view .icon:before{content:"\2014";font-size:16px;top:1px}
 .flexslider ul li{height:auto}
-#footer{max-width:100%;width:100%;height:auto;background-size:contain;background-color:#79797b;background-repeat:repeat;background-position:center}
+#footer{max-width:100%;width:100%;height:auto;background-size:contain;background-color:#79797b;background-repeat:repeat;background-position:center;padding-bottom:20px}
 #footer #footer2-wrapper{max-width:1113px;width:100%;margin:0 auto;padding:10px 30px 5px}
 #main{max-width:1089px;width:100%;margin:0 auto;padding-left:30px;padding-right:30px}
 #main .page-content,#main #comments{max-width:100%;width:100%;margin:0 auto;padding-left:0;padding-right:0}
@@ -2085,15 +2085,15 @@ body #home-wrapper #home-row1-links .linkbox{width:33%;height:75px;margin:0}
 body #home-wrapper #home-row1-links .linkbox .linkboxlgfont{display:block;width:100%}
 body #home-row2-content,body #home-row1-content,body #home-row3-content{max-width:100%;width:100%}
 body #home-row2{height:auto;padding-bottom:100px}
-body #home-row3{height:auto}
+body #home-row3{height:auto !important}
 body #home-row3 #instagram-wrapper{width:65%;float:left;height:auto}
-body #home-row3 #instagram-wrapper #instagram-feed{width:100%;height:auto}
+body #home-row3 #instagram-wrapper #instagram-feed{width:100%;height:auto !important}
 body #home-row3 #latest-news-feed{width:30%;float:right}
 body #home-row3 #home-row3-content{padding-left:30px;padding-right:30px;height:auto}
 body #home-row2-content{padding-top:95px;padding-left:30px;padding-right:30px}
 body #bottom-content-testimonial{width:100%;padding-left:30px;padding-right:30px}
 body .flexslider .slides>li{line-height:1.2}
-}@media screen and (max-width:1024px){html body #mobile-navigation{display:block !important;visibility:visible !important;position:relative !important;top:0 !important;left:0 !important;width:100% !important;z-index:500 !important;padding:0 0 !important;background-color:#00a5d1 !important;border-top:none !important;border-bottom:none !important}
+}@media screen and (max-width:1024px){html body #mobile-navigation{display:block !important;visibility:visible !important;position:relative !important;top:0 !important;left:0 !important;width:100% !important;float:left !important;z-index:500 !important;padding:0 0 !important;background-color:#00a5d1 !important;border-top:none !important;border-bottom:none !important;height:auto !important}
 html body #mobile-navigation #mobileMenuTxt{display:block;color:#FFF;padding:14px 30px 8px;position:relative;font-family:EurostileLTPro;font-size:18px}
 html body #mobile-navigation #mobileMenuTxt .arrow{display:inline-block;position:absolute;left:99px;top:9px;width:13px;height:30px;-webkit-transition:all ease .3s;transition:all ease .3s}
 html body #mobile-navigation #mobileMenuTxt .arrow:before,html body #mobile-navigation #mobileMenuTxt .arrow:after{content:"";display:block;width:100%;height:3px;background:#FFF;position:absolute;top:13px;left:0}
@@ -2101,7 +2101,7 @@ html body #mobile-navigation #mobileMenuTxt .arrow:before{-webkit-transform:tran
 html body #mobile-navigation #mobileMenuTxt .arrow:after{-webkit-transform:translateX(7px) rotate(-45deg);-ms-transform:translateX(7px) rotate(-45deg);transform:translateX(7px) rotate(-45deg)}
 html body #mobile-navigation #uniquename{background:#FFF;width:100%;float:left;position:absolute;top:43px;padding:6px 0}
 html body #main-header-wrapper{height:160px;position:relative}
-html body #main-header-wrapper #logo{top:20px;left:0}
+html body #main-header-wrapper #logo{top:20px;left:20px}
 html body #main-header-wrapper #logo a{display:inline-block;width:250px}
 html body #main-header-wrapper #logo a img{width:100%;height:auto}
 html body #main-header-wrapper #tester{display:none}
@@ -2115,4 +2115,6 @@ html body #custom-accordion .faqrow{padding-right:0}
 html body #custom-accordion .faqrow .question{padding-right:130px}
 html body #featured-image{width:100%;margin:0;padding:0;float:left}
 html body #main .page-content{width:100%;padding-left:30px;padding-right:30px}
+}@media screen and (max-width:820px){html body #main-header-wrapper #logo{left:0 !important}
+html body #main-header-wrapper #header-content-wrapper #header-content{text-align:center !important;padding-left:0 !important;padding-right:0 !important}
 }
