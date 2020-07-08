@@ -79,13 +79,14 @@ $image = get_field('page_top_photo');
       <a name="faqs"></a>
       <!-- -->
       <p>&nbsp;</p>
-      <h2><?php the_field("accordion_header"); ?></h2>
+      <h2 class="faqTitle"><?php the_field("accordion_header"); ?></h2>
 
-      <div id="accordion">
+      <div id="custom-accordion">
       <?php if(get_field('accordion')): while(has_sub_field('accordion')): ?>
        <div class="faqrow">
-          <div class="question"><div class="question-image"></div>
+          <div class="question">
             <h2><?php the_sub_field("accordion_header"); ?></h2>
+            <span class="view"><span class="icon"></span></span>
           </div>
           <div class="answer">
             <?php the_sub_field("accordion_panel"); ?>

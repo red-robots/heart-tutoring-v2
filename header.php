@@ -132,8 +132,7 @@ $(window).scroll(function() {
 </div>  <!-- main-header-wrapper --> 
 
 <div id="mobile-navigation">
-    <a href="javascript:ReverseDisplay('uniquename')"> 
-        MENU &nbsp;&nbsp;&nbsp; <img src="<?php bloginfo('template_url'); ?>/images/down-arrow.png" alt="" border="0">
+    <a href="javascript:ReverseDisplay('uniquename')" id="mobileMenuTxt"> MENU <span class="arrow"></span>
     </a>
     <div id="uniquename" style="display:none;">
         <?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>    

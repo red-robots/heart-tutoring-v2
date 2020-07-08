@@ -10,13 +10,16 @@ wp_reset_postdata();
 wp_reset_query();
 if ( have_posts() ) : while ( have_posts() ) : the_post(); 
 $image = get_field('page_bottom_photo');
-if( !empty($image) ) { ?>
-    <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" /> 
-<?php } ?>
-<div id="bottom-content-testimonial-wrapper">
-<div id="bottom-content-testimonial">
-<?php the_field("testimonial"); ?>
-</div></div>
+$bcStyle = ($image) ? ' style="background-image:url('.$image['url'].')"' : '';
+?>
+<div class="bottom-inner-img"<?php echo $bcStyle ?>>
+	<?php if( !empty($image) ) { ?>
+		<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" /> 
+	<?php } ?>
+	<div id="bottom-content-testimonial-wrapper">
+		<div id="bottom-content-testimonial"><?php the_field("testimonial"); ?></div>
+	</div>
+</div>
 </div>
 <?php endwhile; endif; ?>
 
