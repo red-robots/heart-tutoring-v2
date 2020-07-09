@@ -2091,4 +2091,8 @@ h2.faqTitle{font-size:21px;margin-bottom:20px}
 #home-row4 #home-row4-content .video{width:100%}
 #header-content-wrapper{max-width:100%;width:100%;float:left;position:relative}
 #header-content-wrapper #header-content{margin:0;padding:0;text-align:center;width:100%}
+}@media screen and (max-width:600px){#main-header-wrapper{height:140px}
+#main-header-wrapper #logo{margin-bottom:6px}
+#main-header-wrapper #logo a{width:200px}
+.linkboxlgfont{font-size:18px}
 }
