@@ -8,9 +8,9 @@ $color__background-ins: #fff9c0;
 $color__text-screen: #21759b;
 $color__text-input: #666;
 $color__text-input-focus: #111;
-$color__link: royalblue;
-$color__link-visited: purple;
-$color__link-hover: midnightblue;
+$color__link: #8961AF;
+$color__link-visited: #8961AF;
+$color__link-hover: #C1D42F;
 $color__text-main: #404040;
 $color__border-button: #ccc #ccc #bbb;
 $color__border-button-hover: #ccc #bbb #aaa;
@@ -21,7 +21,7 @@ $color__border-abbr: #666;
 $primary: #8A5EB1;
 $secondary: #00A5D1;
 
-$font__main: sans-serif;
+$font_primary: 'EurostileLTPro',sans-serif;
 $font__code: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
 $font__pre: "Courier 10 Pitch", Courier, monospace;
 $font__line-height-body: 1.5;
@@ -29,8 +29,9 @@ $font__line-height-pre: 1.6;
 
 $xswidth: 480px;
 $tabwidth: 600px;
-$midwidth: 900px;
-$deskwidth: 1200px;
+$midwidth: 960px;
+$deskwidth: 1300px;
+$wrapwidth: 1100px;
 
 @mixin xs { @media (min-width: $xswidth) { @content; } }
 @mixin tab { @media (min-width: $tabwidth) { @content; } }

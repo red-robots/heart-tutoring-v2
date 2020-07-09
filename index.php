@@ -114,26 +114,28 @@ get_header();
 
   <div id="home-row4">
     <div id="home-row4-content">
-      <?php 
-        $recent = new WP_Query("page_id=2239"); 
-        while($recent->have_posts()) : $recent->the_post();
-      ?>
-      <div class="video">
-        <?php the_field("video_one"); ?>
+      <div class="inner">
+        <?php 
+          $recent = new WP_Query("page_id=2239"); 
+          while($recent->have_posts()) : $recent->the_post();
+        ?>
+        <div class="video">
+          <?php the_field("video_one"); ?>
+        </div>
+        <div class="video">
+          <?php the_field("video_two"); ?>
+        </div>
+        <div class="video">
+          <?php the_field("video_three"); ?>
+        </div>
+        <div class="video">
+          <?php the_field("video_four"); ?>
+        </div>
+        <?php 
+          endwhile; 
+          wp_reset_postdata(); // end of the loop. 
+        ?>
       </div>
-      <div class="video">
-        <?php the_field("video_two"); ?>
-      </div>
-      <div class="video">
-        <?php the_field("video_three"); ?>
-      </div>
-      <div class="video">
-        <?php the_field("video_four"); ?>
-      </div>
-    <?php 
-      endwhile; 
-      wp_reset_postdata(); // end of the loop. 
-    ?>
     </div>
   </div>
   <!-- home row4 -->

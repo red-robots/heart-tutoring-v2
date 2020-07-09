@@ -39,6 +39,7 @@ get_header();
 				if ($wp_query->have_posts()) :  ?>
 
 				<section class="team">
+					<div class="inner">
 					<?php while ($wp_query->have_posts()) : $wp_query->the_post(); $i++;
 
 					$image = get_field('photo');
@@ -84,7 +85,7 @@ get_header();
 					<?php 
 					endwhile; 
 					// pagi_posts_nav(); ?>
-					
+					</div>
 				</section>
 			<?php endif; ?>
 
