@@ -2095,4 +2095,11 @@ h2.faqTitle{font-size:21px;margin-bottom:20px}
 #main-header-wrapper #logo{margin-bottom:6px}
 #main-header-wrapper #logo a{width:200px}
 .linkboxlgfont{font-size:18px}
+#footer .pdb-signup tr.text-line{width:100%;float:left}
+#footer .pdb-signup th{display:none}
+#footer .pdb-signup td{width:300px}
+#footer .pdb-signup td input{width:100% !important}
+#footer .field-group-submit{width:100%;float:left}
+#footer .submit-buttons{width:100% !important}
+#footer .submit-buttons .pdb-submit{margin-top:13px}
 }
