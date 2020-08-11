@@ -41,6 +41,9 @@ $gen_availability_desc = get_field('gen_availability_desc');
 $school_preference = get_field('school_preference');
 $school_preference_desc = get_field('school_preference_desc');
 $how_did_you_hear = get_field('how_did_you_hear');
+$resi_label = get_field('resi_label');
+$internet_label = get_field('internet_label');
+$internet_desc = get_field('internet_desc');
 $how_did_you_hear_desc = get_field('how_did_you_hear_desc');
 $how_did_you_hear_hidden = get_field('how_did_you_hear_hidden');
 $how_did_you_hear_hidden_desc = get_field('how_did_you_hear_hidden_desc');
@@ -58,7 +61,8 @@ $show_gen_avail = get_field('show_gen_avail');
 $show_school_preference = get_field('show_school_preference');
 $show_hear = get_field('show_hear');
 $show_hear_other = get_field('show_hear_other');
-
+$show_resi = get_field('show_resi');
+$show_internet = get_field('show_internet');
 
 
  ?>
@@ -164,10 +168,10 @@ $show_hear_other = get_field('show_hear_other');
                 <label class="gfield_label"><?php echo $time_commitmentDesc; ?></label><br>
               <?php } ?>
             <select required required="true" class="medium gfield_select" id="00N6A00000MTg6j" title="Time Commitment" name="00N6A00000MTg6j">
-              <option value="">--None--</option>
-              <option value="1 hour (two sessions)">1 hour (two sessions)</option>
-              <option value="30 minutes (one session)">30 minutes (one session)</option>
-              <option value="Other">Other</option>
+             	<option value="">--None--</option><option value="1 hour (two sessions)">1 hour (two sessions)</option>
+				<option value="30 minutes (two sessions)">30 minutes (two sessions)</option>
+				<option value="1 hour two times per week (four sessions)">1 hour two times per week (four sessions)</option>
+				<option value="Other">Other</option>
             </select  required="true" required>
           </li>
           <?php } ?>
@@ -253,6 +257,31 @@ $show_hear_other = get_field('show_hear_other');
             </select  required="true" required>
           </li>
           <?php } ?>
+
+
+
+
+          <?php if( $show_resi == 'Yes') { ?>
+          	<li class="gfield">
+          		<label class="gfield_label"><strong><?php echo $resi_label; ?></strong></label>
+          		<input  id="00N2G00000Cd9w2" name="00N2G00000Cd9w2" type="checkbox" value="1"  required="true" required>
+          	</li>
+          <?php } ?>
+
+
+
+          <?php if( $show_internet == 'Yes') { ?>
+          	<li class="gfield">
+          		<label class="gfield_label"><strong><?php echo $internet_label; ?></strong></label><br>
+          		<?php if( $internet_desc != '') { ?>
+	              <label class="gfield_label " ><?php echo $internet_desc; ?></label><br>
+	            <?php } ?>
+          		<input  id="00N2G00000Cd9wC" name="00N2G00000Cd9wC" type="checkbox" value="1"  required="true" required>
+          	</li>
+          <?php } ?>
+
+
+
 
           <?php if( $show_hear_other == 'Yes') { ?>
           <li  class="gfield toggle" style="display: none;">
