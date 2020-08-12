@@ -42,6 +42,7 @@ $school_preference = get_field('school_preference');
 $school_preference_desc = get_field('school_preference_desc');
 $how_did_you_hear = get_field('how_did_you_hear');
 $resi_label = get_field('resi_label');
+$resi_desc = get_field('resi_desc');
 $internet_label = get_field('internet_label');
 $internet_desc = get_field('internet_desc');
 $how_did_you_hear_desc = get_field('how_did_you_hear_desc');
@@ -168,10 +169,11 @@ $show_internet = get_field('show_internet');
                 <label class="gfield_label"><?php echo $time_commitmentDesc; ?></label><br>
               <?php } ?>
             <select required required="true" class="medium gfield_select" id="00N6A00000MTg6j" title="Time Commitment" name="00N6A00000MTg6j">
-             	<option value="">--None--</option><option value="1 hour (two sessions)">1 hour (two sessions)</option>
-				<option value="30 minutes (two sessions)">30 minutes (two sessions)</option>
-				<option value="1 hour two times per week (four sessions)">1 hour two times per week (four sessions)</option>
-				<option value="Other">Other</option>
+              <!-- <option value="">--None--</option> -->
+              <option value="1 hour (two sessions)">1 hour once per week (two sessions)</option>
+              <option value="30 minutes (two sessions)">30 minutes twice per week (two sessions)</option>
+              <option value="1 hour two times per week (four sessions)">1 hour twice per week (four sessions)</option>
+              <option value="Other">Other</option>
             </select  required="true" required>
           </li>
           <?php } ?>
@@ -262,22 +264,25 @@ $show_internet = get_field('show_internet');
 
 
           <?php if( $show_resi == 'Yes') { ?>
-          	<li class="gfield">
-          		<label class="gfield_label"><strong><?php echo $resi_label; ?></strong></label><br>
-          		<input  id="00N2G00000Cd9w2" name="00N2G00000Cd9w2" type="checkbox" value="1"  required="true" required> Yes
-          	</li>
+            <li class="gfield">
+              <label class="gfield_label"><strong><?php echo $resi_label; ?></strong></label><br>
+              <?php if( $resi_desc != '') { ?>
+                <label class="gfield_label " ><?php echo $resi_desc; ?></label><br>
+              <?php } ?>
+              <input  id="00N2G00000Cd9w2" name="00N2G00000Cd9w2" type="checkbox" value="1"  required="true" required> I am a resident of North or South Carolina.
+            </li>
           <?php } ?>
 
 
 
           <?php if( $show_internet == 'Yes') { ?>
-          	<li class="gfield">
-          		<label class="gfield_label"><strong><?php echo $internet_label; ?></strong></label><br>
-          		<?php if( $internet_desc != '') { ?>
-	              <label class="gfield_label " ><?php echo $internet_desc; ?></label><br>
-	            <?php } ?>
-          		<input  id="00N2G00000Cd9wC" name="00N2G00000Cd9wC" type="checkbox" value="1"  required="true" required> I have both device and internet access
-          	</li>
+            <li class="gfield">
+              <label class="gfield_label"><strong><?php echo $internet_label; ?></strong></label><br>
+              <?php if( $internet_desc != '') { ?>
+                <label class="gfield_label " ><strong><?php echo $internet_desc; ?></strong></label><br>
+              <?php } ?>
+              <input  id="00N2G00000Cd9wC" name="00N2G00000Cd9wC" type="checkbox" value="1"  required="true" required> I have both device and internet access
+            </li>
           <?php } ?>
 
 
