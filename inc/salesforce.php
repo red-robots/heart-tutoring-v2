@@ -269,7 +269,7 @@ $show_internet = get_field('show_internet');
               <?php if( $resi_desc != '') { ?>
                 <label class="gfield_label " ><?php echo $resi_desc; ?></label><br>
               <?php } ?>
-              <input  id="00N2G00000Cd9w2" name="00N2G00000Cd9w2" type="checkbox" value="1"  required="true" required> I am a resident of North or South Carolina.
+              <input  id="00N2G00000Cd9w2" name="00N2G00000Cd9w2" type="checkbox" value="1" > I am a resident of North or South Carolina.
             </li>
           <?php } ?>
 
