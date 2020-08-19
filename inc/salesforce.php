@@ -258,6 +258,9 @@ $show_internet = get_field('show_internet');
               <option value="Other">Other</option>
             </select  required="true" required>
           </li>
+          <br>
+          <br>
+          <br>
           <?php } ?>
 
 
@@ -272,6 +275,8 @@ $show_internet = get_field('show_internet');
               <?php } ?>
               
             </li>
+            <br>
+            <br>
           <?php } ?>
 
 
