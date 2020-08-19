@@ -265,11 +265,12 @@ $show_internet = get_field('show_internet');
 
           <?php if( $show_resi == 'Yes') { ?>
             <li class="gfield">
+              <input  id="00N2G00000Cd9w2" name="00N2G00000Cd9w2" type="checkbox" value="1" > I am a resident of North or South Carolina.<br>
               <label class="gfield_label"><strong><?php echo $resi_label; ?></strong></label><br>
               <?php if( $resi_desc != '') { ?>
                 <label class="gfield_label " ><?php echo $resi_desc; ?></label><br>
               <?php } ?>
-              <input  id="00N2G00000Cd9w2" name="00N2G00000Cd9w2" type="checkbox" value="1" > I am a resident of North or South Carolina.
+              
             </li>
           <?php } ?>
 
@@ -277,11 +278,12 @@ $show_internet = get_field('show_internet');
 
           <?php if( $show_internet == 'Yes') { ?>
             <li class="gfield">
-              <label class="gfield_label"><strong><?php echo $internet_label; ?></strong></label><br>
+              <input  id="00N2G00000Cd9wC" name="00N2G00000Cd9wC" type="checkbox" value="1"  required="true" required> I have both device and internet access<br>
+              <label class="gfield_label"><strong><?php echo $internet_label; ?></strong></label>
               <?php if( $internet_desc != '') { ?>
                 <label class="gfield_label " ><strong><?php echo $internet_desc; ?></strong></label><br>
               <?php } ?>
-              <input  id="00N2G00000Cd9wC" name="00N2G00000Cd9wC" type="checkbox" value="1"  required="true" required> I have both device and internet access
+              
             </li>
           <?php } ?>
 
