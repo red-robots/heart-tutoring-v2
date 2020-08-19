@@ -312,8 +312,24 @@ $show_internet = get_field('show_internet');
 
       <script>
         function enableBtn(){
-    document.getElementById("btnSubmit").disabled = false;
-  }
+          document.getElementById("btnSubmit").disabled = false;
+        }
+
+/*
+
+        Require the Explanation field if the "ohter was chosen"
+
+*/
+        $('select[name=00N6A00000MTsDm]').change(function () {
+            if ($(this).val() == 'Other') {
+                // $('#provinceselect').show();
+                $('#00N6A00000Mk09D').prop('required',true);
+            } else {
+                $('#00N6A00000Mk09D').prop('required',false);
+                // $('#provinceselect').hide();
+            }
+        });
+
     // function recaptchaCallback() {
     //     var btnSubmit = document.getElementById("btnSubmit");
 
