@@ -100,6 +100,115 @@ $show_internet = get_field('show_internet');
           </li>
           <?php } ?>
 
+           <!-- 
+
+              Prefered Time
+
+           -->
+
+
+          <?php if( $show_time == 'Yes') { ?>
+          <li class="gfield">
+            <label class="gfield_label"><strong><?php echo $time_commitment; ?></strong></label><br>
+            <?php if($time_commitmentDesc != '') { ?>
+                <label class="gfield_label"><?php echo $time_commitmentDesc; ?></label><br>
+              <?php } ?>
+            <select required required="true" class="medium gfield_select" id="00N6A00000MTg6j" title="Time Commitment" name="00N6A00000MTg6j">
+              <!-- <option value="">--None--</option> -->
+              <option value="1 hour (two sessions)">1 hour once per week (two sessions)</option>
+              <option value="30 minutes (two sessions)">30 minutes twice per week (two sessions)</option>
+              <option value="1 hour two times per week (four sessions)">1 hour twice per week (four sessions)</option>
+              <option value="Other">Other</option>
+            </select  required="true" required>
+          </li>
+          <?php } ?>
+
+           <!-- 
+
+              Prefered Time Other
+
+           -->
+
+          <?php if( $show_time_other == 'Yes') { ?>
+          <li class="gfield togglepref" style="display: none;">
+            <label class="gfield_label " ><strong><?php echo $time_commitment_other; ?></strong></label><br>
+            <?php if( $time_commitment_other_desc != '') { ?>
+              <label class="gfield_label " ><?php echo $time_commitment_other_desc; ?></label><br>
+            <?php } ?>
+            <input id="00N6A00000MTsDX" maxlength="255" name="00N6A00000MTsDX" size="20" type="text" class="medium" />
+          </li>
+          <?php } ?>
+
+           <!-- 
+
+              General Availability
+
+           -->
+
+          <?php if( $show_gen_avail == 'Yes') { ?>
+          <li class="gfield">
+            <label class="gfield_label "><strong><?php echo $gen_availability; ?></strong></label><br>
+            <?php if( $gen_availability_desc != '') { ?>
+              <label class="gfield_label " ><?php echo $gen_availability_desc; ?></label><br>
+            <?php } ?>
+            <select  required required="true" class="medium gfield_select"  id="00N6A00000Mikyd" multiple="multiple" name="00N6A00000Mikyd" title="General Availability (Interest Form)">
+              <option value="Mid-Morning">Mid-Morning</option>
+              <option value="Lunch Time/Early Afternoon">Lunch Time/Early Afternoon</option>
+              <option value="Late Afternoon">Late Afternoon</option>
+            </select  required="true" required>
+          </li>
+          <?php } ?>
+
+
+          <!-- 
+
+              Tutoring Days
+
+           -->
+
+          <?php if( $show_days == 'Yes') { ?>
+          <li class="gfield">
+            <label class="gfield_label"><strong><?php echo $days; ?></strong></label><br>
+            <?php if($days_desc != '') { ?>
+                <label class="gfield_label"><?php echo $days_desc; ?></label><br>
+              <?php } ?>
+            <select required required="true" class="medium gfield_select" id="00N6A00000MTg6K" title="Tutoring Days Selected" multiple="multiple" name="00N6A00000MTg6K">
+              <option value="Monday">Monday</option>
+              <option value="Tuesday">Tuesday</option>
+              <option value="Wednesday">Wednesday</option>
+              <option value="Thursday">Thursday</option>
+              <option value="Friday">Friday</option>
+              <option value="No Preference">No Preference</option>
+            </select  required="true" required>
+          </li>
+          <?php } ?>
+
+
+
+          <!-- 
+
+              School Preference
+
+           -->
+
+          <?php if( $show_school_preference == 'Yes') { ?>
+          <li class="gfield">
+            <label class="gfield_label "><strong><?php echo $school_preference; ?></strong></label><br>
+            <?php if( $school_preference_desc != '') { ?>
+              <label class="gfield_label " ><?php echo $school_preference_desc; ?></label><br>
+            <?php } ?>
+            <textarea  id="00N6A00000MU3xQ" class="medium gfield_select" name="00N6A00000MU3xQ" type="text" wrap="soft"></textarea>
+          </li>
+          <?php } ?>
+
+
+
+          <!-- 
+
+              Schools
+
+           -->
+
           <?php if( $show_time_location == 'Yes') { ?>
           <li class="gfield">
             <label class="gfield_label"><strong><?php echo $timeLocation; ?></strong></label><br>
@@ -133,60 +242,24 @@ $show_internet = get_field('show_internet');
 
 
 
+           
+          <!-- 
+
+          Other Preferences
+          
+           -->
+          <?php if( $show_other_preferences == 'Yes') { ?>
+          <li class="gfield">
+            <label class="gfield_label "><strong><?php echo $other_preferences; ?></strong></label><br>
+            <?php if( $other_preferences_desc != '') { ?>
+              <label class="gfield_label " ><?php echo $other_preferences_desc; ?></label><br>
+            <?php } ?>
+            <textarea id="00N6A00000MTxGr" name="00N6A00000MTxGr" rows="3" wrap="soft" class="medium" ></textarea>
+          </li>
+          <?php } ?>
           
 
-          <?php if( $show_school_preference == 'Yes') { ?>
-          <li class="gfield">
-            <label class="gfield_label "><strong><?php echo $school_preference; ?></strong></label><br>
-            <?php if( $school_preference_desc != '') { ?>
-              <label class="gfield_label " ><?php echo $school_preference_desc; ?></label><br>
-            <?php } ?>
-            <textarea  id="00N6A00000MU3xQ" class="medium gfield_select" name="00N6A00000MU3xQ" type="text" wrap="soft"></textarea>
-          </li>
-          <?php } ?>
-
-          <?php if( $show_days == 'Yes') { ?>
-          <li class="gfield">
-            <label class="gfield_label"><strong><?php echo $days; ?></strong></label><br>
-            <?php if($days_desc != '') { ?>
-                <label class="gfield_label"><?php echo $days_desc; ?></label><br>
-              <?php } ?>
-            <select required required="true" class="medium gfield_select" id="00N6A00000MTg6K" title="Tutoring Days Selected" multiple="multiple" name="00N6A00000MTg6K">
-              <option value="Monday">Monday</option>
-              <option value="Tuesday">Tuesday</option>
-              <option value="Wednesday">Wednesday</option>
-              <option value="Thursday">Thursday</option>
-              <option value="Friday (only Westerly Hills Academy)">Friday (Huntingtowne Farms, and Renaissance West ONLY)</option>
-              <option value="No Preference">No Preference</option>
-            </select  required="true" required>
-          </li>
-          <?php } ?>
-
-         <?php if( $show_time == 'Yes') { ?>
-          <li class="gfield">
-            <label class="gfield_label"><strong><?php echo $time_commitment; ?></strong></label><br>
-            <?php if($time_commitmentDesc != '') { ?>
-                <label class="gfield_label"><?php echo $time_commitmentDesc; ?></label><br>
-              <?php } ?>
-            <select required required="true" class="medium gfield_select" id="00N6A00000MTg6j" title="Time Commitment" name="00N6A00000MTg6j">
-              <!-- <option value="">--None--</option> -->
-              <option value="1 hour (two sessions)">1 hour once per week (two sessions)</option>
-              <option value="30 minutes (two sessions)">30 minutes twice per week (two sessions)</option>
-              <option value="1 hour two times per week (four sessions)">1 hour twice per week (four sessions)</option>
-              <option value="Other">Other</option>
-            </select  required="true" required>
-          </li>
-          <?php } ?>
-
-          <?php if( $show_time_other == 'Yes') { ?>
-          <li class="gfield togglepref" style="display: none;">
-            <label class="gfield_label " ><strong><?php echo $time_commitment_other; ?></strong></label><br>
-            <?php if( $time_commitment_other_desc != '') { ?>
-              <label class="gfield_label " ><?php echo $time_commitment_other_desc; ?></label><br>
-            <?php } ?>
-            <input id="00N6A00000MTsDX" maxlength="255" name="00N6A00000MTsDX" size="20" type="text" class="medium" />
-          </li>
-          <?php } ?>
+         
 
 
            <!-- 
@@ -206,36 +279,12 @@ $show_internet = get_field('show_internet');
 
 
 
-           <!-- 
-
-          Other Preferences
-          
-           -->
-          <?php if( $show_other_preferences == 'Yes') { ?>
-          <li class="gfield">
-            <label class="gfield_label "><strong><?php echo $other_preferences; ?></strong></label><br>
-            <?php if( $other_preferences_desc != '') { ?>
-              <label class="gfield_label " ><?php echo $other_preferences_desc; ?></label><br>
-            <?php } ?>
-            <textarea id="00N6A00000MTxGr" name="00N6A00000MTxGr" rows="3" wrap="soft" class="medium" ></textarea>
-          </li>
-          <?php } ?>
+           
 
            
           
 
-          <?php if( $show_gen_avail == 'Yes') { ?>
-          <li class="gfield">
-            <label class="gfield_label "><strong><?php echo $gen_availability; ?></strong></label><br>
-            <?php if( $gen_availability_desc != '') { ?>
-              <label class="gfield_label " ><?php echo $gen_availability_desc; ?></label><br>
-            <?php } ?>
-            <select  required required="true" class="medium gfield_select"  id="00N6A00000Mikyd" multiple="multiple" name="00N6A00000Mikyd" title="General Availability (Interest Form)">
-              <option value="Early morning (before work)">Early morning (before work)</option>
-              <option value="Midday/Afternoon">Midday/Afternoon</option>
-            </select  required="true" required>
-          </li>
-          <?php } ?>
+          
 
           <?php // honeypot ?>
           <div style="position:absolute; left:-9999px; top: -9999px;">
@@ -244,7 +293,11 @@ $show_internet = get_field('show_internet');
           </div>
           <?php // honeypot ?>
 
+           <!-- 
+
+          How did you hear??
           
+           -->
 
           <?php if( $show_hear == 'Yes') { ?>
           <li class="gfield">
@@ -264,7 +317,28 @@ $show_internet = get_field('show_internet');
           <?php } ?>
 
 
+          <!-- 
 
+          How did you hear?? Other
+          
+           -->
+
+          <?php if( $show_hear_other == 'Yes') { ?>
+          <li  class="gfield toggle" style="display: none;">
+            <label class="gfield_label"><strong><?php echo $how_did_you_hear_hidden; ?></strong></label><br>
+            <?php if( $how_did_you_hear_hidden_desc != '') { ?>
+              <label class="gfield_label " ><?php echo $how_did_you_hear_hidden_desc; ?></label><br>
+            <?php } ?>
+            <textarea class="textarea medium" id="00N6A00000Mk09D" name="00N6A00000Mk09D" rows="3" wrap="soft"></textarea>
+          </li>
+          <?php } ?>
+
+
+          <!-- 
+
+          Resident
+          
+           -->
 
           <?php if( $show_resi == 'Yes') { ?>
             <li class="gfield">
@@ -280,6 +354,11 @@ $show_internet = get_field('show_internet');
           <?php } ?>
 
 
+          <!-- 
+
+          Internet Confirmation
+          
+           -->
 
           <?php if( $show_internet == 'Yes') { ?>
             <li class="gfield">
@@ -295,15 +374,7 @@ $show_internet = get_field('show_internet');
 
 
 
-          <?php if( $show_hear_other == 'Yes') { ?>
-          <li  class="gfield toggle" style="display: none;">
-            <label class="gfield_label"><strong><?php echo $how_did_you_hear_hidden; ?></strong></label><br>
-            <?php if( $how_did_you_hear_hidden_desc != '') { ?>
-              <label class="gfield_label " ><?php echo $how_did_you_hear_hidden_desc; ?></label><br>
-            <?php } ?>
-            <textarea class="textarea medium" id="00N6A00000Mk09D" name="00N6A00000Mk09D" rows="3" wrap="soft"></textarea>
-          </li>
-          <?php } ?>
+          
 
         
           <div class="g-recaptcha" data-sitekey="6LdIzNEUAAAAAJPp55-3Bve0vGcrmK3KtN6uel8t" data-callback="enableBtn"></div>
