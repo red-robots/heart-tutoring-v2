@@ -24,10 +24,12 @@
 $firstName = get_field('first_name');
 $last_name = get_field('last_name');
 $email = get_field('email');
+$phone = get_field('phone');
 $timeLocation = get_field('times_&_locations');
 $timeLocationDesc = get_field('times_&_locations_desc');
 $days = get_field('days');
 $days_desc = get_field('days_desc');
+$settingPreference = get_field('setting_preference');
 $time_commitment = get_field('time_commitment');
 $time_commitmentDesc = get_field('time_commitment_desc');
 $time_commitment_other = get_field('time_commitment_other');
@@ -41,6 +43,8 @@ $gen_availability_desc = get_field('gen_availability_desc');
 $school_preference = get_field('school_preference');
 $school_preference_desc = get_field('school_preference_desc');
 $how_did_you_hear = get_field('how_did_you_hear');
+$dob_label = get_field('dob');
+$dob_desc = get_field('dob_desc');
 $resi_label = get_field('resi_label');
 $resi_desc = get_field('resi_desc');
 $internet_label = get_field('internet_label');
@@ -52,8 +56,10 @@ $how_did_you_hear_hidden_desc = get_field('how_did_you_hear_hidden_desc');
 $show_first_name = get_field('show_first_name');
 $show_last_name = get_field('show_last_name');
 $show_email = get_field('show_email');
+$show_phone = get_field('show_phone');
 $show_time_location = get_field('show_time_location');
 $show_days = get_field('show_days');
+$show_settingPreference = get_field('show_setting_preference');
 $show_time = get_field('show_time');
 $show_time_other = get_field('show_time_other');
 $show_orientation_selection = get_field('show_orientation_selection');
@@ -62,6 +68,7 @@ $show_gen_avail = get_field('show_gen_avail');
 $show_school_preference = get_field('show_school_preference');
 $show_hear = get_field('show_hear');
 $show_hear_other = get_field('show_hear_other');
+$show_dob = get_field('show_dob');
 $show_resi = get_field('show_resi');
 $show_internet = get_field('show_internet');
 
@@ -100,6 +107,14 @@ $show_internet = get_field('show_internet');
           </li>
           <?php } ?>
 
+
+          <?php if( $show_phone == 'Yes') { ?>
+          <li class="gfield">
+            <label for="email" class="gfield_label"><strong><?php echo $phone; ?></strong></label><br>
+            <input  id="00N2G00000ChccW" maxlength="40" name="00N2G00000ChccW" class="medium" onkeydown="formatPhoneOnEnter(this, event);" size="20" type="text" />
+          </li>
+          <?php } ?>
+          
            <!-- 
 
               Prefered Time
@@ -152,6 +167,7 @@ $show_internet = get_field('show_internet');
               <label class="gfield_label " ><?php echo $gen_availability_desc; ?></label><br>
             <?php } ?>
             <select  required required="true" class="medium gfield_select"  id="00N6A00000Mikyd" multiple="multiple" name="00N6A00000Mikyd" title="General Availability (Interest Form)">
+              <option value="Mid-Morning">Early morning</option>
               <option value="Mid-Morning">Mid-Morning</option>
               <option value="Lunch Time/Early Afternoon">Lunch Time/Early Afternoon</option>
               <option value="Late Afternoon">Late Afternoon</option>
@@ -177,13 +193,28 @@ $show_internet = get_field('show_internet');
               <option value="Tuesday">Tuesday</option>
               <option value="Wednesday">Wednesday</option>
               <option value="Thursday">Thursday</option>
-              <option value="Friday">Friday</option>
+              <option value="Friday">Friday (Huntingtowne Farms, J.W. Grier, and Barringer ONLY)</option>
               <option value="No Preference">No Preference</option>
             </select  required="true" required>
           </li>
           <?php } ?>
 
 
+          <!-- 
+
+              Setting Preference
+
+           -->
+           <?php if( $show_settingPreference == 'Yes') { ?>
+          <li class="gfield">
+            <label class="gfield_label"><strong><?php echo $settingPreference; ?></strong></label><br>
+            <select  id="00N2G00000ChccM" name="00N2G00000ChccM" title="Setting Preference" class="medium gfield_select">
+              <option value="In-person only">In-person only</option>
+              <option value="Virtual only">Virtual only</option>
+              <option value="No preference">No preference</option>
+            </select>
+          </li>
+          <?php } ?>
 
           <!-- 
 
@@ -215,7 +246,7 @@ $show_internet = get_field('show_internet');
             <?php if($timeLocationDesc != '') { ?>
                 <label class="gfield_label"><?php echo $timeLocationDesc; ?></label><br>
               <?php } ?>
-              <div class="checkboxes">
+              <div class="checkboxes schools">
 
 
                   <?php if(have_rows('schools')) : while(have_rows('schools')) : the_row(); 
@@ -225,7 +256,7 @@ $show_internet = get_field('show_internet');
                         $show = get_sub_field('show');
 
                         if( $show == 'Yes' ) {
-                          echo '<div class="item">';
+                          echo '<div class="item school">';
                           echo '<input id="'.$fieldID.'" name="'.$fieldID.'" type="checkbox" value="1">'.$sName;
                           echo '</div>';
                         }
@@ -334,6 +365,28 @@ $show_internet = get_field('show_internet');
           <?php } ?>
 
 
+          
+
+          <!-- 
+
+          DOB
+          
+           -->
+
+          <?php if( $show_dob == 'Yes') { ?>
+            <li class="gfield">
+              
+              <label class="gfield_label"><strong><?php echo $dob_label; ?></strong></label><br>
+              <?php if( $dob_desc != '') { ?>
+                <label class="gfield_label " ><?php echo $dob_desc; ?></label><br>
+              <?php } ?>
+              <input value="MM/DD/YYYY" id="00N2G00000ChRfC" name="00N2G00000ChRfC" size="12" type="text" required="true" required/>
+            </li>
+            <br>
+            <br>
+          <?php } ?>
+
+
           <!-- 
 
           Resident
@@ -389,6 +442,7 @@ $show_internet = get_field('show_internet');
       </form>
 
       <script>
+        $("#btnSubmit").attr("disabled", true);
         function enableBtn(){
           document.getElementById("btnSubmit").disabled = false;
         }

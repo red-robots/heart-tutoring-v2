@@ -5,6 +5,16 @@
 
 jQuery(document).ready(function ($) {
 
+	$( function() {
+	    $( "#datepicker" ).datepicker();
+	  } );
+
+	$('input#00N2G00000ChRfC').val($('#datepicker').val());
+
+	$('#datepicker').keyup(function () {
+	  $('#00N2G00000ChRfCw').val(this.value);
+	});
+
 
 	$('.flexslider').flexslider({
 		animation: "fade",
