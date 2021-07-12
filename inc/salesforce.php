@@ -24,12 +24,14 @@
 $firstName = get_field('first_name');
 $last_name = get_field('last_name');
 $email = get_field('email');
+$emailSecond = get_field('email_second');
 $phone = get_field('phone');
 $timeLocation = get_field('times_&_locations');
 $timeLocationDesc = get_field('times_&_locations_desc');
 $days = get_field('days');
 $days_desc = get_field('days_desc');
 $settingPreference = get_field('setting_preference');
+$settingPreference_desc = get_field('setting_desc');
 $time_commitment = get_field('time_commitment');
 $time_commitmentDesc = get_field('time_commitment_desc');
 $time_commitment_other = get_field('time_commitment_other');
@@ -56,6 +58,7 @@ $how_did_you_hear_hidden_desc = get_field('how_did_you_hear_hidden_desc');
 $show_first_name = get_field('show_first_name');
 $show_last_name = get_field('show_last_name');
 $show_email = get_field('show_email');
+$show_emailSecond = get_field('show_email_second');
 $show_phone = get_field('show_phone');
 $show_time_location = get_field('show_time_location');
 $show_days = get_field('show_days');
@@ -107,6 +110,13 @@ $show_internet = get_field('show_internet');
           </li>
           <?php } ?>
 
+          <?php if( $show_emailSecond == 'Yes') { ?>
+          <li class="gfield">
+            <label for="email" class="gfield_label"><strong><?php echo $emailSecond; ?></strong></label><br>
+            <input  id="00N2G00000CheFA" maxlength="80" name="00N2G00000CheFA" size="20" class="medium" type="text" />
+          </li>
+          <?php } ?>
+
 
           <?php if( $show_phone == 'Yes') { ?>
           <li class="gfield">
@@ -128,9 +138,10 @@ $show_internet = get_field('show_internet');
             <?php if($time_commitmentDesc != '') { ?>
                 <label class="gfield_label"><?php echo $time_commitmentDesc; ?></label><br>
               <?php } ?>
-            <select required required="true" class="medium gfield_select" id="00N6A00000MTg6j" title="Time Commitment" name="00N6A00000MTg6j">
+            <select required required="true" class="medium gfield_select" id="00N6A00000MTg6j"; title="Time Commitment" name="00N6A00000MTg6j">
               <!-- <option value="">--None--</option> -->
               <option value="1 hour (two sessions)">1 hour once per week (two sessions)</option>
+              <option value="30 minutes once per week (one session)">30 minutes once per week (one session)</option>
               <option value="30 minutes (two sessions)">30 minutes twice per week (two sessions)</option>
               <option value="1 hour two times per week (four sessions)">1 hour twice per week (four sessions)</option>
               <option value="Other">Other</option>
@@ -167,6 +178,7 @@ $show_internet = get_field('show_internet');
               <label class="gfield_label " ><?php echo $gen_availability_desc; ?></label><br>
             <?php } ?>
             <select  required required="true" class="medium gfield_select"  id="00N6A00000Mikyd" multiple="multiple" name="00N6A00000Mikyd" title="General Availability (Interest Form)">
+              <option value="">Choose</option>
               <option value="Mid-Morning">Early morning</option>
               <option value="Mid-Morning">Mid-Morning</option>
               <option value="Lunch Time/Early Afternoon">Lunch Time/Early Afternoon</option>
@@ -189,11 +201,12 @@ $show_internet = get_field('show_internet');
                 <label class="gfield_label"><?php echo $days_desc; ?></label><br>
               <?php } ?>
             <select required required="true" class="medium gfield_select" id="00N6A00000MTg6K" title="Tutoring Days Selected" multiple="multiple" name="00N6A00000MTg6K">
+              <option value="">Choose</option>
               <option value="Monday">Monday</option>
               <option value="Tuesday">Tuesday</option>
               <option value="Wednesday">Wednesday</option>
               <option value="Thursday">Thursday</option>
-              <option value="Friday">Friday (Huntingtowne Farms, J.W. Grier, and Barringer ONLY)</option>
+              <option value="Friday">Friday</option>
               <option value="No Preference">No Preference</option>
             </select  required="true" required>
           </li>
@@ -208,11 +221,15 @@ $show_internet = get_field('show_internet');
            <?php if( $show_settingPreference == 'Yes') { ?>
           <li class="gfield">
             <label class="gfield_label"><strong><?php echo $settingPreference; ?></strong></label><br>
-            <select  id="00N2G00000ChccM" name="00N2G00000ChccM" title="Setting Preference" class="medium gfield_select">
+            <?php if($settingPreference_desc != '') { ?>
+                <label class="gfield_label"><?php echo $settingPreference_desc; ?></label><br>
+              <?php } ?>
+            <select  required required="true" id="00N2G00000ChccM" name="00N2G00000ChccM" title="Setting Preference" class="medium gfield_select">
+              <option value="">Please Select</option>
               <option value="In-person only">In-person only</option>
               <option value="Virtual only">Virtual only</option>
-              <option value="No preference">No preference</option>
-            </select>
+              <option value="Willing to tutor either in-person or virtual">Willing to tutor either in-person or virtual</option>
+            </select  required="true" required>
           </li>
           <?php } ?>
 
@@ -429,16 +446,8 @@ $show_internet = get_field('show_internet');
 
           
 
-        
+        <div class="g-recaptcha" data-sitekey="6LebCuwaAAAAALZ4hG93-DU29pd-7mvH2J3a2SOT" data-callback="enableBtn"></div>
           <!-- <div class="g-recaptcha" data-sitekey="6LdIzNEUAAAAAJPp55-3Bve0vGcrmK3KtN6uel8t" data-callback="enableBtn"></div> -->
-          
-<script>
-grecaptcha.enterprise.ready(function() {
-    grecaptcha.enterprise.execute('6LebCuwaAAAAALZ4hG93-DU29pd-7mvH2J3a2SOT', {action: 'login'}).then(function(token) {
-       ...
-    });
-});
-</script>
        
 
 
@@ -470,6 +479,8 @@ grecaptcha.enterprise.ready(function() {
             }
         });
 
+
+
     // function recaptchaCallback() {
     //     var btnSubmit = document.getElementById("btnSubmit");
 
@@ -479,5 +490,19 @@ grecaptcha.enterprise.ready(function() {
     //     }
     // }
 </script>
+<?php if( $show_time_location == 'Yes') { ?>
+  <script type="text/javascript">
+      // Make required checkboxes for submit btn
+    $('#btnSubmit').click(function() {
+        checked = $(".school input[type=checkbox]:checked").length;
+
+        if(!checked) {
+          alert("You must check at least one prefered location.");
+          return false;
+        }
+
+      });
+  </script>
+<?php } ?>
   </div>
 </div>
